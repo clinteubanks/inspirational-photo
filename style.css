@@ -1,0 +1,51 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.image-container {
+    position: relative; /* Needed for absolute positioning of the quote */
+    max-width: 80vw; /* Limit image width */
+    max-height: 80vh; /* Limit image height */
+    display: inline-block; /* Keep container tight around image */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    opacity: 1; /* Start fully visible */
+    transition: opacity 0.5s ease-in-out; /* Define the fade transition */
+}
+
+.image-container.fade-out {
+    opacity: 0; /* Fade target */
+}
+
+#random-image {
+    display: block; /* Remove extra space below image */
+    max-width: 100%;
+    max-height: 80vh; /* Ensure image respects container height */
+    height: auto;
+    width: auto; /* Maintain aspect ratio */
+}
+
+#random-quote {
+    position: absolute;
+    bottom: 10%; /* Position near the bottom */
+    left: 5%; /* Indent from left */
+    right: 5%; /* Indent from right */
+    color: white; /* Default color, will adjust dynamically */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 10px;
+    margin: 0;
+    border-radius: 5px;
+    font-size: 1.5em; /* Adjust as needed */
+    text-align: center;
+    text-shadow: 1px 1px 2px black; /* Improve readability */
+    /* We'll need JS to ensure it doesn't cover faces */
+} 
